@@ -44,3 +44,25 @@ var charArrKey = Object.keys(charObj);
 console.log('Max character is '+charArrKey[maxValue]);
 }
 maxChar(charObj);
+
+
+// Solution 2
+var str = 'Hello There!';
+var charObj = {};
+
+for(var character of str){
+	charObj[character] = charObj[character]+1 || 1;
+}
+//console.log(charObj);
+function maxChar(charObj){
+var max = 0;
+var maxChar = '';
+	for(var ch in charObj){
+		if(charObj[ch]>max){
+			max = charObj[ch];
+			maxChar = ch;
+		}
+	}
+	console.log('Max character is '+maxChar);
+}
+maxChar(charObj);
